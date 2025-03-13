@@ -6,6 +6,8 @@ import { Setting } from "./Ui/Setting";
 import { FetchOld } from "./Ui/FetchOld";
 import { FetchNew } from "./Ui/FetchNew";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+
 
 const Router = createBrowserRouter([
   {
@@ -45,6 +47,8 @@ const theQueryClient = new QueryClient();
 
     <RouterProvider router={Router}>
     </RouterProvider>
+    <ReactQueryDevtools initialIsOpen={false} />
+
     </QueryClientProvider>
   );
 };

@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { fetchPosts} from "../api/Api";
+import { fetchOldMethod} from "../api/Api";
 
 export const FetchOld = () => {
   const [Posts, setPosts] = useState([]);
 
   const getPostsData = async () => {
     try {
-      const res = await fetchPosts();
+      const res = await fetchOldMethod();
       console.log(res);
       if (res.status === 200) {
         setPosts(res.data);

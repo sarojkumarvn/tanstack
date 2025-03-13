@@ -9,3 +9,7 @@ export const fetchPosts = async () => {
     return res.status === 200 ? res.data : []; 
 };
 
+
+export const fetchOldMethod = () => {
+  return api.get("/posts");
+}
