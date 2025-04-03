@@ -8,7 +8,8 @@ export const MainLayout = () => {
     <div className="flex flex-col h-screen  w-full border-black bg-gray-800 ">
       <Header />
       <div className="flex-1 w-full  h-full">
-        <Outlet />
+        {/* Which should be changed */}
+        <Outlet /> 
       </div>
       <Footer />
     </div>

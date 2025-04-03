@@ -6,8 +6,9 @@ import { Setting } from "./Ui/Setting";
 import { FetchOld } from "./Ui/FetchOld";
 import { FetchNew } from "./Ui/FetchNew";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
-
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import { Brightness } from "./Brightness";
+import { EachIndv } from "./EachIndv";
 
 const Router = createBrowserRouter([
   {
@@ -31,24 +32,31 @@ const Router = createBrowserRouter([
         element: <FetchNew />,
       },
       {
+        path: "fetchnew/:id",
+        element: <EachIndv />,
+      },
+      {
         path: "setting",
         element: <Setting />,
       },
+      {
+        path:"brightness",
+        element:<Brightness />
+      }
     ],
   },
+
 ]);
 
 const App = () => {
-const theQueryClient = new QueryClient();
+  const theQueryClient = new QueryClient(); // creating the query client
 
   return (
-    <QueryClientProvider client={theQueryClient}>
-
-
-    <RouterProvider router={Router}>
-    </RouterProvider>
-    <ReactQueryDevtools initialIsOpen={false} />
-
+    // wrapping the app with the query client provider which provide the query client to the app
+    <QueryClientProvider client={theQueryClient}> 
+      <RouterProvider router={Router}></RouterProvider>
+      {/* accessing the react query dev tools  */}
+      <ReactQueryDevtools initialIsOpen={false} /> 
     </QueryClientProvider>
   );
 };

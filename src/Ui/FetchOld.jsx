@@ -25,7 +25,7 @@ export const FetchOld = () => {
       {Posts.map(
         (
           { title, body },
-          index // Destructuring directly inside the map function
+          index 
         ) => (
           <div
             key={index}
