@@ -11,6 +11,10 @@ export const EachIndv = () => {
     queryFn: () => fetchindvpost(id), // query function from which we get the data
   });
 
+
+ 
+
+
   if (isLoading) return <span className="loading loading-bars loading-xs"></span>,
   <span className="loading loading-bars loading-sm"></span>,
   <span className="loading loading-bars loading-md"></span>,

@@ -28,3 +28,14 @@ export const fetchindvpost = async (id) => {
     console.error("Error fetching individual post:", error);
   }
 };
+
+// To delete the post
+
+export const deletePost = (id) => {
+  return api.delete(`/posts/${id}`);
+};
+
+// To update the data 
+export const updatePost = (id, ) => {
+  return api.patch(`/posts/${id}`, {title : "I have updated"});
+}
