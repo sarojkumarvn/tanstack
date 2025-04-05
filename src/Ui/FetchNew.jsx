@@ -16,7 +16,7 @@ export const FetchNew = () => {
     staleTime: 7000, // how long the data should be kept in the cache before refetching
     // refetchInterval: 1000, // how often the data should be refetched
     // refetchIntervalInBackground: true, // refetching in the background
-    placeholderData: keepPreviousData, // TO KEEP THE PREVIOUS DATAfor the previous page
+    placeholderData: keepPreviousData, // TO KEEP THE PREVIOUS DATA FOR the previous page
   });
 
   //Mutation function to delete the data

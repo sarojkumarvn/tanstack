@@ -36,6 +36,18 @@ export const deletePost = (id) => {
 };
 
 // To update the data 
-export const updatePost = (id, ) => {
+export const updatePost = (id) => {
   return api.patch(`/posts/${id}`, {title : "I have updated"});
+}
+
+
+//infinite scrolling 
+export const fetchUsers = async ({ pageParam = 1 }) => {
+  try {
+    const res = await axios.get(`https://api.github.com/users?per_page=5&page=${pageParam}`)
+    return res.data // this will be an array of users
+  } catch (error) {
+    console.error('Error fetching users:', error)
+    return [] // fallback to empty array so app doesn't crash
+  }
 }

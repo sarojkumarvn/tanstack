@@ -9,6 +9,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { Brightness } from "./Brightness";
 import { EachIndv } from "./EachIndv";
+import { Infinite } from "./Infinite";
 
 const Router = createBrowserRouter([
   {
@@ -36,16 +37,19 @@ const Router = createBrowserRouter([
         element: <EachIndv />,
       },
       {
+        path: "infinite",
+        element: <Infinite />,
+      },
+      {
         path: "setting",
         element: <Setting />,
       },
       {
-        path:"brightness",
-        element:<Brightness />
-      }
+        path: "brightness",
+        element: <Brightness />,
+      },
     ],
   },
-
 ]);
 
 const App = () => {
@@ -53,10 +57,10 @@ const App = () => {
 
   return (
     // wrapping the app with the query client provider which provide the query client to the app
-    <QueryClientProvider client={theQueryClient}> 
+    <QueryClientProvider client={theQueryClient}>
       <RouterProvider router={Router}></RouterProvider>
       {/* accessing the react query dev tools  */}
-      <ReactQueryDevtools initialIsOpen={false} /> 
+      <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
   );
 };
